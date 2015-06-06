@@ -11,7 +11,7 @@
 
 </head>
 <body>
-  
+
   <!-- Navigation -->
   <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -31,20 +31,15 @@
                   <li class="hidden">
                       <a href="#page-top"></a>
                   </li>
-                  <li class="page-scroll">
-                      <a href="#">Home</a>
-                  </li>
-                  <li class="page-scroll">
-                      <a href="#">About</a>
-                  </li>
-                  <li class="page-scroll">
-                      <a href="#">Community</a>
-                  </li>
+                  <%= nav_link 'Home', root_path %>
+                  <%= nav_link 'About', "#" %>
+                  <%= nav_link 'Community', "#" %>
+
                   <% if user_signed_in? %>
-                  <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                  <%= nav_link 'Edit Profile', edit_user_registration_path %>
                   <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
                   <% else %>
-                  <li><%= link_to "Login", new_user_session_path %></li>
+                  <%= nav_link 'Login', new_user_session_path %>
                   <% end %>
             </ul>
 
@@ -56,7 +51,7 @@
           </div>
       </div>
   </nav>
-  
+
   <div class="container">
     <!-- Static navbar -->
     <nav class="navbar navbar-default">
