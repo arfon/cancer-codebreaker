@@ -2,14 +2,13 @@
 module SurveyorControllerCustomMethods
   def self.included(base)
     base.send :before_filter, :authenticate_user!   # Devise
-    # base.send :before_filter, :login_required  # Restful Authentication
     base.send :layout, 'application'
   end
 
   # Actions
   def new
     super
-    # @title = "You can take these surveys"
+    @title = "Surveys we'd like you to take"
   end
   def create
     super
