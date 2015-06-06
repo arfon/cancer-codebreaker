@@ -25,9 +25,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <%= nav_link 'Home', root_path %>
+            <%= nav_link 'Share', first_questions_path %>
+            <%= nav_link 'About', "#" %>
+            <%= nav_link 'Contact', "#" %>
           </ul>
         </div><!--/.nav-collapse -->
       </div><!--/.container-fluid -->
