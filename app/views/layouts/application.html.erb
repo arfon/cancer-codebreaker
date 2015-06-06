@@ -11,85 +11,44 @@
 
 </head>
 <body>
-
   <!-- Navigation -->
   <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-          <div class="navbar-header page-scroll">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#page-top">Cancer Codebreaker</a>
-              <small>Survivor-driven cancer research</small>
-          </div>
+    <div class="container"><!-- container -->
+      <div class="navbar-header page-scroll"><!-- navbar-header -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#page-top">Cancer Codebreaker</a>
+        <small>Survivor-driven cancer research</small>
+      </div><!-- /navbar-header -->
 
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
-                  <li class="hidden">
-                      <a href="#page-top"></a>
-                  </li>
-                  <%= nav_link 'Home', root_path %>
-                  <%= nav_link 'About', "#" %>
-                  <%= nav_link 'Community', "#" %>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><!--.nav-collapse -->
+        <ul class="nav navbar-nav navbar-right">
+          <li class="hidden"><a href="#page-top"></a></li>
+          <%= nav_link 'Home', root_path %>
+          <%= nav_link 'Share', first_questions_path %>
+          <%= nav_link 'About', "#" %>
+          <%= nav_link 'Contact', "#" %>
 
-                  <% if user_signed_in? %>
-                  <%= nav_link 'Edit Profile', edit_user_registration_path %>
-                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-                  <% else %>
-                  <%= nav_link 'Login', new_user_session_path %>
-                  <% end %>
-            </ul>
-
-        </div><!--/.nav-collapse -->
-        <% flash.each do |name, msg| %>
+          <% if user_signed_in? %>
+          <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to "Login", new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </div><!--/.nav-collapse -->
+      <% flash.each do |name, msg| %>
         <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-        <% end %>
-              </ul>
-          </div>
-      </div>
+      <% end %>
+    </div><!--/.container -->
   </nav>
 
-  <div class="container">
-    <!-- Static navbar -->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Cancer Codebreakers</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <%= nav_link 'Home', root_path %>
-            <%= nav_link 'Share', first_questions_path %>
-            <%= nav_link 'About', "#" %>
-            <%= nav_link 'Contact', "#" %>
-          </ul>
-
-          <ul class="nav pull-right">
-            <% if user_signed_in? %>
-            <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-            <% else %>
-            <li><%= link_to "Login", new_user_session_path %></li>
-            <% end %>
-            </ul>
-
-        </div><!--/.nav-collapse -->
-        <% flash.each do |name, msg| %>
-        <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-        <% end %>
-      </div><!--/.container-fluid -->
-    </nav>
-
+  <div class="container"><!-- container -->
     <%= yield %>
-  </div>
+  </div><!-- /container -->
 </body>
 </html>
