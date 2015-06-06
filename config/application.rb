@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'simple_form'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -23,8 +24,10 @@ module Codebreaker
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
+    # Bad bad bad. HACK HACK HACK
+    config.action_controller.permit_all_parameters = true
 
-    # Required for Devise on Heroku 
+    # Required for Devise on Heroku
     config.assets.initialize_on_precompile = false
   end
 end

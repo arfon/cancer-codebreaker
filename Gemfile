@@ -23,6 +23,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # SMS action
 gem 'twilio-ruby', '~> 4.2.0'
 
+# Surveyor
+gem 'surveyor', :git => "git@github.com:arfon/surveyor.git", :branch => "simple_form"
+
 # Databases
 gem 'pg'
 
@@ -36,8 +39,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
