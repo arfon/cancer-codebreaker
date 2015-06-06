@@ -26,5 +26,8 @@ module Codebreaker
 
     # Bad bad bad. HACK HACK HACK
     config.action_controller.permit_all_parameters = true
+
+    # Required for Devise on Heroku
+    config.assets.initialize_on_precompile = false
   end
 end
