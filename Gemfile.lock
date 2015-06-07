@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:arfon/surveyor.git
+  remote: git://github.com/arfon/surveyor.git
   revision: f3f6867ee9d100c6709450b887909d370647ca11
   branch: simple_form
   specs:

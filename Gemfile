@@ -24,7 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twilio-ruby', '~> 4.2.0'
 
 # Surveyor
-gem 'surveyor', :git => "git@github.com:arfon/surveyor.git", :branch => "simple_form"
+gem 'surveyor', :git => "git://github.com/arfon/surveyor.git", :branch => "simple_form"
 
 # Databases
 gem 'pg'
