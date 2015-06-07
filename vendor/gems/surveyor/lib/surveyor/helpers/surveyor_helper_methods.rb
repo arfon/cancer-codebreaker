@@ -27,7 +27,7 @@ module Surveyor
         return if record.try(:display_type) == "hidden"
         dom_classes = [ dom_class(record),
                         record.try(:dom_class, @response_set),
-                        ("row col-md-12" if tag == :div and (record.is_a?(QuestionGroup) or (record.is_a?(Question) and !record.part_of_group?))),
+                        ("row col-md-8" if tag == :div and (record.is_a?(QuestionGroup) or (record.is_a?(Question) and !record.part_of_group?))),
                       ].delete_if(&:blank?)
         content_tag(tag, {class: dom_classes.join(" "), id: dom_id(record)}, &block)
       end

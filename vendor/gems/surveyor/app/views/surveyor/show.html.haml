@@ -1,10 +1,10 @@
 #surveyor
   = render 'partials/surveyor_flash'
   .row
-    .col-md-12
+    .col-md-8
       %h3.survey_title= @survey.translation(I18n.locale)[:title]
   .row
-    .col-md-12
+    .col-md-8
       = simple_form_for(@response_set, as: :r, url: surveyor.update_my_survey_path, html: {method: :put, id: "survey_form", class: @survey.dom_class}) do |f|
         - @survey.sections.each do |section|
           = div_for section do

@@ -9,7 +9,8 @@
     = render 'partials/dependents' unless @dependents.empty?
     = render "/partials/section", :f => f
     .row
-      %h2.next_section.pull-right= next_section
+      .col-md-8
+        %h2.next_section.pull-right= next_section
 
     = hidden_field_tag :surveyor_javascript_enabled, false
   %br
