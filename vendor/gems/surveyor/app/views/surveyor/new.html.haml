@@ -1,0 +1,14 @@
+#surveyor.container
+  = render 'partials/surveyor_flash'
+  %h3.surveys= t('surveyor.take_these_surveys')
+  - @surveys_by_access_code.each do |access_code, surveys|
+    %p
+      = form_tag surveyor.take_survey_path(:survey_code => access_code), :class => "form-inline" do
+        .form-group
+          %button.btn.btn-primary{:type => "submit"}= surveys.first.translation(I18n.locale)[:title]
+        = hidden_field_tag :surveyor_javascript_enabled, false
+
+:javascript
+  $(document).ready(function() {
+    $("input#surveyor_javascript_enabled").val(true);
+  });
