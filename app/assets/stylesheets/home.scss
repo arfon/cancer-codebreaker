@@ -49,18 +49,51 @@
     border: 0;
 }
 
-body {
-  padding-top: 140px;
-}
 @media (max-width: 979px) {
   body {
     padding-top: 70px;
   }
 }
 
+
+body {
+  padding-top: 140px;
+  background-color: rgba(57,153,127,0.2);
+}
+
+#welcome-text {
+  margin: 20px;
+}
+
+
+#tagline {
+  background-color: rgba(57,153,127,0.2);
+  min-height: 360px;
+}
+
+#map-box {
+  background-color: rgba(57,153,127,0.2);
+  min-height: 360px;
+}
+
+
+#circle-row {
+  margin: 50px 0px 50px 0px;
+}
+
+.img-circle {
+  margin: 0px;
+  width: 200px;
+  height: 200px;
+}
+
 #map-canvas {
-  width: 500px;
-  height: 400px;
+  margin: 20px;
+  width: 320px;
+  height: 320px;
+  -webkit-border-radius: 160px;
+  -moz-border-radius: 160px;
+  -border-radius: 160px;
 }
 
 .form_group{
