@@ -95,5 +95,67 @@ survey "Disease Type", :default_mandatory => false do
     dependency :rule => "A"
     condition_A :q_1, "==", :a_4
     
+    q_4 "Do you know the stage of your cancer?", :pick => :one
+    a_1 "Yes"
+    a_2 "No"
+    
+    q_5 "Tumor size:", :pick => :one
+    a_1 "TX (tumor cannot be evaluated)"
+    a_2 "T0 (no signs of tumor)"
+    a_3 "Tis (carcinoma in situ)"
+    a_3 "T1"
+    a_4 "T2"
+    a_5 "T3"
+    a_6 "T4"
+    a_7 "Specify size instead"
+    dependency :rule => "A"
+    condition_A :q_4, "==", :a_1
+    
+    q_6 "Size:"
+    a :integer
+    validation :rule => "A"
+    condition_A ">=", :integer_value => 0
+    dependency :rule => "B"
+    condition_B :q_5, "==", :a_7
+    
+    q_7 "Units:", :pick => :one
+    a_1 "Inches"
+    a_2 "Centimeters"
+    dependency :rule => "A"
+    condition_A :q_5, "==", :a_7
+    
+    q_8 "Lymph nodes:", :pick => :one
+    a_1 "NX (regional lymph nodes cannot be evaluated)"
+    a_2 "N0 (no regional lymph node involvement)"
+    a_3 "N1"
+    a_4 "N2"
+    a_5 "N3"
+    a_6 "Specify number of positive lymph nodes instead"
+    dependency :rule => "A"
+    condition_A :q_4, "==", :a_1
+    
+    q_9 "Number of positive lymph nodes:"
+    a :integer
+    validation :rule => "A"
+    condition_A ">=", :integer_value => 0
+    dependency :rule => "B"
+    condition_B :q_8, "==", :a6
+    
+    q_10 "Distant metastasis:", :pick => :one
+    a_1 "MX (distant metastasis cannot be evaluated)"
+    a_2 "M0 (no distant metastasis)"
+    a_3 "M1 (distant metastasis is present)"
+    dependency :rule => "A"
+    condition_A :q_4, "==", :a_1
+    
+    q_11 "Tumor grade:", :pick => :one
+    a_1 "GX (grade cannot be assessed)"
+    a_2 "G1 (well differentiated, low grade)"
+    a_3 "G2 (moderately differentiated, intermediate grade)"
+    a_4 "G3 (poorly differentiated, high grade)"
+    a_5 "G4 (undifferentiated, high grade)"
+    dependency :rule => "A"
+    condition_A :q_4, "==", :a_1
+    
   end
 end
