@@ -48,3 +48,12 @@
 .navbar-inverse {
     border: 0;
 }
+
+body {
+  padding-top: 140px;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 70px;
+  }
+}
