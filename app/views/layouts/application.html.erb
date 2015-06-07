@@ -21,17 +21,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#page-top">Cancer Codebreaker</a>
-        <small>Survivor-driven cancer research</small>
+        <%= image_tag 'logo.gif', :size=> "190x50"%>
       </div><!-- /navbar-header -->
 
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><!--.nav-collapse -->
         <ul class="nav navbar-nav navbar-right">
           <li class="hidden"><a href="#page-top"></a></li>
           <%= nav_link 'Home', root_path %>
-          <%= nav_link 'Share', first_questions_path %>
-          <%= nav_link 'About', "#" %>
-          <%= nav_link 'Contact', "#" %>
+          <%= nav_link 'Share', "/surveys" %>
+          <%= nav_link 'About', about_path %>
 
           <% if user_signed_in? %>
           <li><%= link_to "Dashboard", user_dashboard_path%></li>

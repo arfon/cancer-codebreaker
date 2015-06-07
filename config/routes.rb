@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
 
   # You can have the root of your site routed with "root"
+  get 'about' => 'home#about', as: :about
   root 'home#index'
 
   # Example of regular route:

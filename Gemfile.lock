@@ -1,7 +1,5 @@
-GIT
-  remote: git@github.com:arfon/surveyor.git
-  revision: f3f6867ee9d100c6709450b887909d370647ca11
-  branch: simple_form
+PATH
+  remote: vendor/gems/surveyor
   specs:
     surveyor (1.4.1.pre)
       bootstrap-sass (>= 3.1.1)
