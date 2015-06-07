@@ -69,7 +69,7 @@ survey "Disease Type", :default_mandatory => false do
     dependency :rule => "A"
     condition_A :q_1, "==", :a_7
     
-    q_3a "What area(s) of the brain are affected?"
+    q_3a "What area(s) of the brain are affected?", :pick => :any
     a_1 "Frontal lobe"
     a_2 "Parietal lobe"
     a_3 "Temporal lobe"
@@ -82,7 +82,7 @@ survey "Disease Type", :default_mandatory => false do
     dependency :rule => "A"
     condition_A :q_1, "==", :a_1
     
-    q_3b "What area(s) of the colon are affected?"
+    q_3b "What area(s) of the colon are affected?", :pick => :any
     a_1 "Cecum"
     a_2 "Ascending colon"
     a_3 "Hepatic flexure"
