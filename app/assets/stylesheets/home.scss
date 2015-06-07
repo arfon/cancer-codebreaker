@@ -57,3 +57,36 @@ body {
     padding-top: 70px;
   }
 }
+
+#welcome-text {
+  margin: 20px;
+}
+
+.col-md-6 {
+  margin: 0px;
+  height: 600px;
+  background-color: rgba(57,153,127,0.3);
+}
+
+#circle-row {
+  margin: 50px 0px 50px 0px;
+}
+
+.img-circle {
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+#map-canvas {
+  margin: 20px;
+  width: 400px;
+  height: 400px;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  -border-radius: 200px;
+}
+
+
+
+
