@@ -13,6 +13,7 @@
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-default navbar-fixed-top">
+<<<<<<< HEAD
     <div class="container"><!-- container -->
       <div class="navbar-header page-scroll"><!-- navbar-header -->
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -42,6 +43,39 @@
         </ul>
       </div><!--/.nav-collapse -->
       <% flash.each do |name, msg| %>
+=======
+      <div class="container">
+          <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#page-top">Cancer Codebreaker</a>
+              <small>Survivor-driven cancer research</small>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                  <li class="hidden">
+                      <a href="#page-top"></a>
+                  </li>
+                  <%= nav_link 'Home', root_path %>
+                  <%= nav_link 'About', "#" %>
+                  <%= nav_link 'Community', "#" %>
+
+                  <% if user_signed_in? %>
+                  <%= nav_link 'My Account', edit_user_registration_path %>
+                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+                  <% else %>
+                  <%= nav_link 'Login', new_user_session_path %>
+                  <% end %>
+            </ul>
+
+        </div><!--/.nav-collapse -->
+        <% flash.each do |name, msg| %>
+>>>>>>> 649311da663806edd581000f3db2a3c08340b8f2
         <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
       <% end %>
     </div><!--/.container -->
